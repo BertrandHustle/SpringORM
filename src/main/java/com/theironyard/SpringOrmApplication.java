@@ -24,6 +24,6 @@ public class SpringOrmApplication {
 		System.out.println(customers.get(77).getName());
 		System.out.println(purchases.get(99).getCreditCard());
 
-		//SpringApplication.run(SpringOrmApplication.class, args);
+		SpringApplication.run(SpringOrmApplication.class, args);
 	}
 }

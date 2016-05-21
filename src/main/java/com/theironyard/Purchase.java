@@ -1,9 +1,14 @@
 package com.theironyard;
 
+import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
+import javax.persistence.Id;
+
+@Entity
 public class Purchase {
 
-    //customer_id,date,credit_card,cvv,category
-
+    @Id
+    @GeneratedValue
     int customerId;
     String date;
     String creditCard;
