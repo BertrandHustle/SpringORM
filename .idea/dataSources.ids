@@ -27,12 +27,16 @@
       <schema id="5" parent="1" name="pg_toast">
         <object-id>99</object-id>
         <comment>reserved schema for TOAST tables</comment>
+        <introspection-state-number>986</introspection-state-number>
+        <introspection-timestamp>2016-05-21.16:32:15.826</introspection-timestamp>
       </schema>
       <schema id="6" parent="1" name="pg_toast_temp_1">
         <object-id>11817</object-id>
+        <introspection-timestamp>2016-05-21.16:32:16.044</introspection-timestamp>
       </schema>
       <schema id="7" parent="1" name="pg_temp_1">
         <object-id>11816</object-id>
+        <introspection-timestamp>2016-05-21.16:32:16.144</introspection-timestamp>
       </schema>
       <sequence id="8" parent="2" name="customer_id_seq">
         <object-id>16419</object-id>
