@@ -3,43 +3,56 @@ package com.theironyard;
 import java.util.ArrayList;
 import java.util.Scanner;
 
-/**
- * Created by Scott on 5/21/16.
- */
 public class CSVParser {
 
     public static ArrayList<Customer> CustomerBuilder(Scanner scanner){
 
-        //init for People arrayList
+        //init for Customer arrayList
         ArrayList<Customer> customers = new ArrayList<>();
 
         //skips first line
         scanner.nextLine();
 
-        //reading loop, splits on commas. constructs Persons, adds to arraylist
+        //reading loop, splits on commas. constructs Customers, adds to arraylist
         while (scanner.hasNext()){
 
-            //Person builder
+            //Customer builder
             String[] thisLine = scanner.nextLine().split(",");
-            int id = Integer.parseInt(thisLine[0]);
-            String firstName = thisLine[1];
-            String lastName = thisLine[2];
-            String email = thisLine[3];
-            String country = thisLine[4];
-            String ipAddress = thisLine[5];
+            String name = thisLine[0];
+            String email = thisLine[1];
 
-            Customer customer = new customer (
-                    id,
-                    firstName,
-                    lastName,
-                    email,
-                    country,
-                    ipAddress);
+            Customer customer = new Customer (name, email);
 
             customers.add(customer);
         }
 
         return customers;
+    }
+
+    public static ArrayList<Purchase> PurchaseBuilder(Scanner scanner){
+
+        //init for Purchase arrayList
+        ArrayList<Purchase> purchases = new ArrayList<>();
+
+        //skips first line
+        scanner.nextLine();
+
+        //reading loop, splits on commas. constructs Purchases, adds to arraylist
+        while (scanner.hasNext()){
+
+            //Purchase builder
+            String[] thisLine = scanner.nextLine().split(",");
+            String date = thisLine[1];
+            String creditCard = thisLine[2];
+            int cvv = Integer.parseInt(thisLine[3]);
+            String category = thisLine[4];
+
+            Purchase purchase = new Purchase (date, creditCard, cvv, category);
+
+            purchases.add(purchase);
+        }
+
+        return purchases;
     }
 }
 
