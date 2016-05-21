@@ -9,15 +9,11 @@
 <a href="/?category=Food">Food</a>
 <a href="/?category=Jewelry">Jewelry</a>
 
-
-<table border = "1">
+<div>
+<table border = "1" style = "float: left;">
     <tr>
         <th>Name</th>
         <th>Email</th>
-        <th>Category</th>
-        <th>Credit Card#</th>
-        <th>CVV</th>
-        <th>Date</th>
     </tr>
     {{#customers}}
     <tr>
@@ -29,6 +25,17 @@
         </td>
     </tr>
     {{/customers}}
+</table>
+
+
+<table border = "1" style = "float: left;">
+
+    <tr>
+        <th>Category</th>
+        <th>Credit Card#</th>
+        <th>CVV</th>
+        <th>Date</th>
+    </tr>
 
     {{#purchases}}
     <tr>
@@ -48,6 +55,7 @@
     {{/purchases}}
 
 </table>
+</div>
 </body>
 </html>
 
