@@ -13,17 +13,6 @@ public class SpringOrmApplication {
 
 	public static void main(String[] args) throws IOException{
 
-		File file = new File("customers.csv");
-		Scanner scanner = new Scanner(file);
-		ArrayList<Customer> customers = CSVParser.CustomerBuilder(scanner);
-
-		File file2 = new File("purchases.csv");
-		Scanner scanner2 = new Scanner(file2);
-		ArrayList<Purchase> purchases = CSVParser.PurchaseBuilder(scanner2);
-
-		System.out.println(customers.get(77).getName());
-		System.out.println(purchases.get(99).getCreditCard());
-
 		SpringApplication.run(SpringOrmApplication.class, args);
 	}
 }

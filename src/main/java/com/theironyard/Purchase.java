@@ -15,13 +15,6 @@ public class Purchase {
     int cvv;
     String category;
 
-    public Purchase(String date, String creditCard, int cvv, String category) {
-        this.date = date;
-        this.creditCard = creditCard;
-        this.cvv = cvv;
-        this.category = category;
-    }
-
     public int getCustomerId() {
         return customerId;
     }

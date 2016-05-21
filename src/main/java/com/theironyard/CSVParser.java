@@ -21,7 +21,9 @@ public class CSVParser {
             String name = thisLine[0];
             String email = thisLine[1];
 
-            Customer customer = new Customer (name, email);
+            Customer customer = new Customer ();
+            customer.setName(name);
+            customer.setEmail(email);
 
             customers.add(customer);
         }
@@ -47,7 +49,11 @@ public class CSVParser {
             int cvv = Integer.parseInt(thisLine[3]);
             String category = thisLine[4];
 
-            Purchase purchase = new Purchase (date, creditCard, cvv, category);
+            Purchase purchase = new Purchase ();
+            purchase.setDate(date);
+            purchase.setCreditCard(creditCard);
+            purchase.setCvv(cvv);
+            purchase.setCategory(category);
 
             purchases.add(purchase);
         }
