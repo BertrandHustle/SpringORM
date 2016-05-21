@@ -44,13 +44,26 @@ public class SpringORMController {
 
 
     @RequestMapping(path = "/", method = RequestMethod.GET)
-    public String webRoot(Model model, HttpSession session){
+    public String webRoot(Model model, String query, String category){
 
         //used to add purchases to model
         Iterable<Purchase> purchases;
-        purchases = purchaseRepo.findAll();
+
+        //search by category
+        if(query != null) {
+            purchases = purchaseRepo.findByCategoryStartsWith(query);
+        } else if (category != null) {
+            purchases = purchaseRepo.findByCategory(category);
+        } else {
+            purchases = purchaseRepo.findAll();
+        }
+
+        //adds customers to model
+        Iterable<Customer> customers;
+        customers = customerRepo.findAll();
 
         model.addAttribute("purchases", purchases);
+        model.addAttribute("customers", customers);
         return "home";
 
     }
