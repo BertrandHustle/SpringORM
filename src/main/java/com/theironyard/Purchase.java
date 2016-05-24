@@ -3,24 +3,39 @@ package com.theironyard;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.Id;
+import javax.persistence.ManyToOne;
+import javax.validation.constraints.NotNull;
 
 @Entity
 public class Purchase {
 
-    @Id
     @GeneratedValue
-    int customerId;
+    @Id
+    int id;
+
     String date;
     String creditCard;
     int cvv;
     String category;
 
-    public int getCustomerId() {
-        return customerId;
+    @ManyToOne
+    @NotNull
+    Customer customer;
+
+    public int getId() {
+        return id;
     }
 
-    public void setCustomerId(int customerId) {
-        this.customerId = customerId;
+    public void setId(int id) {
+        this.id = id;
+    }
+
+    public Customer getCustomer() {
+        return customer;
+    }
+
+    public void setCustomer(Customer customer) {
+        this.customer = customer;
     }
 
     public String getDate() {

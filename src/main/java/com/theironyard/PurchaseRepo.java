@@ -8,6 +8,6 @@ import java.util.List;
 public interface PurchaseRepo extends CrudRepository<Purchase, Integer>{
     List<Purchase> findByCategory(String category);
 
-    @Query("SELECT p FROM Purchase p WHERE p.category LIKE CONCAT(?1, '%')")
+    @Query("SELECT p FROM Purchase p, Customer c WHERE p.id = c.id AND p.category LIKE CONCAT(?1, '%')")
     List<Purchase> findByCategoryStartsWith (String category);
 }

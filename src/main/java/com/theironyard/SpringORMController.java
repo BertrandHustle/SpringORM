@@ -29,15 +29,15 @@ public class SpringORMController {
         if (customerRepo.count() == 0) {
             File file = new File("customers.csv");
             Scanner scanner = new Scanner(file);
-            ArrayList<Customer> customers = CSVParser.CustomerBuilder(scanner);
+            ArrayList<Customer> customers = CSVParser.CustomerBuilder(scanner, customerRepo);
             customerRepo.save(customers);
         }
 
         //saves purchases to repo
-        if (purchaseRepo.count() == 0 ) {
+        if (purchaseRepo.count() == 0) {
             File file2 = new File("purchases.csv");
             Scanner scanner2 = new Scanner(file2);
-            ArrayList<Purchase> purchases = CSVParser.PurchaseBuilder(scanner2);
+            ArrayList<Purchase> purchases = CSVParser.PurchaseBuilder(scanner2, customerRepo);
             purchaseRepo.save(purchases);
         }
     }
@@ -58,12 +58,14 @@ public class SpringORMController {
             purchases = purchaseRepo.findAll();
         }
 
+        /*
         //adds customers to model
         Iterable<Customer> customers;
         customers = customerRepo.findAll();
+        */
 
         model.addAttribute("purchases", purchases);
-        model.addAttribute("customers", customers);
+        //model.addAttribute("customers", customers);
         return "home";
 
     }

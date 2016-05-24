@@ -9,28 +9,16 @@
 <a href="/?category=Food">Food</a>
 <a href="/?category=Jewelry">Jewelry</a>
 
+
+<!-- MAKE THIS ONE TABLE (add top table to bottom)-->
+
 <div>
+    
 <table border = "1" style = "float: left;">
+
     <tr>
         <th>Name</th>
         <th>Email</th>
-    </tr>
-    {{#customers}}
-    <tr>
-        <td>
-            {{name}}
-        </td>
-        <td>
-            {{email}}
-        </td>
-    </tr>
-    {{/customers}}
-</table>
-
-
-<table border = "1" style = "float: left;">
-
-    <tr>
         <th>Category</th>
         <th>Credit Card#</th>
         <th>CVV</th>
@@ -39,6 +27,12 @@
 
     {{#purchases}}
     <tr>
+        <td>
+            {{customer.name}}
+        </td>
+        <td>
+            {{customer.email}}
+        </td>
         <td>
             {{category}}
         </td>
